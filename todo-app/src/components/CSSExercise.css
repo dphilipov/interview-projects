@@ -1,0 +1,13 @@
+/*
+max-width: 500px
+header: #efefef
+text #333
+h2 bottom border: #ccc
+nav selected border: #333
+nav hover border: #666
+*/
+
+body {
+  background-color: #fcfcfc;
+  font-family: "Open Sans", "Source Sans Pro", Arial, sans-serif;
+}
