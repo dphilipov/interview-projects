@@ -1,0 +1,18 @@
+.app {
+  margin: 20px;
+}
+
+.hooks .todo-hooks,
+.class .todo-class,
+.romanNumerals .roman-numerals,
+.css .css {
+  font-weight: bold
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+button {
+  margin-right: 10px;
+}

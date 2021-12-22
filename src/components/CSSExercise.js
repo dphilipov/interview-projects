@@ -4,9 +4,9 @@ import "./CSSExercise.css";
 // DO NOT EDIT - for reference only
 function CSSExercise() {
   return (
-    <div class="app">
+    <div className="app">
       <header>
-        <div class="header-content">
+        <div className="header-content">
           <h1>
             <img
               src="https://s3.amazonaws.com/taulia-styles/tau-logo.png"
@@ -16,22 +16,22 @@ function CSSExercise() {
           <nav>
             <ul>
               <li>
-                <a class="selected" href="#">
+                <a className="selected" href="http://taulia.com">
                   Invoices
                 </a>
               </li>
               <li>
-                <a href="#">Purchase Orders</a>
+                <a href="http://taulia.com">Purchase Orders</a>
               </li>
               <li>
-                <a href="#">Payments</a>
+                <a href="http://taulia.com">Payments</a>
               </li>
             </ul>
           </nav>
         </div>
       </header>
 
-      <div class="content">
+      <div className="content">
         <h2>Invoices</h2>
       </div>
     </div>
