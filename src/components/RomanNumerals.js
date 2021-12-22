@@ -45,7 +45,7 @@ const RomanNumerals = () => {
   return (
     <>
       <h2>Test Results</h2>
-      {results.map((result) => <div>{result}</div>)}
+      {results.map((result, index) => <div key={index}>{result}</div>)}
     </>
   )
 }
