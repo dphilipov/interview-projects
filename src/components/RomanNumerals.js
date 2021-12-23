@@ -21,8 +21,39 @@ C can be placed before D (500) and M (1000) to make 400 and 900.
 
 const RomanNumerals = () => {
 
+  const map = {
+    'M': 1000,
+    'D': 500,
+    'C': 100,
+    'L': 50,
+    'X': 10,
+    'V': 5,
+    'I': 1
+  }
+
   const romanToInt = str => {
-    return 3
+    let result = 0;
+    const regex = /(?=[MDCLXVI]+\b)M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})/;
+
+    // check if the string is valid
+    if (!str.match(regex)) return 'invalid string';
+
+    str.split('').forEach((letter, i) => {
+      const curr = map[`${letter}`];
+      const prev = map[`${str[i - 1]}`]
+      const next = map[`${str[i + 1]}`]
+
+      // check if the current letter is greater than prev = current - previous 
+      if ((curr > prev)) {
+        result += curr - prev
+      }
+      // check if the current letter is greater than next, equal to next or this is the last letter = add current
+      else if ((curr > next) || (curr === next || str[i + 1] === undefined)) {
+        result += curr;
+      }
+    })
+
+    return result;
   }
 
   // Test cases
@@ -36,7 +67,7 @@ const RomanNumerals = () => {
   ];
 
   const results = testCases.map(testCase => {
-    const {caseNumber, romanNumeral, expectedAnswer} = testCase;
+    const { caseNumber, romanNumeral, expectedAnswer } = testCase;
     const error = `☹️"${romanNumeral}" should return ${expectedAnswer}`;
     const success = `😻 Case ${caseNumber} passed!`;
     return romanToInt(romanNumeral) === expectedAnswer ? success : error;
